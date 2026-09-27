@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch A1 – Wiederholungslektion (60 min)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Arial,Helvetica,sans-serif;background:#f5f3fb;color:#252336;line-height:1.6}
+.container{max-width:1100px;margin:auto;padding:25px}
+header{background:linear-gradient(135deg,#3b2b6e,#6a4caf);color:white;padding:32px;border-radius:22px;margin-bottom:22px;box-shadow:0 10px 30px #0002}
+h1,h2,h3{line-height:1.25}
+header h1{margin:0 0 8px;font-size:2.2rem}
+header p{margin:6px 0 0;opacity:.9;font-size:1.1rem}
+.card{background:white;border-radius:18px;padding:25px;margin:18px 0;box-shadow:0 5px 18px #00000012}
+.section-title{display:flex;justify-content:space-between;gap:15px;align-items:center;border-bottom:2px solid #eee;padding-bottom:12px;flex-wrap:wrap}
+.badge{background:#eee8fb;color:#5b3f9e;padding:5px 12px;border-radius:20px;font-size:.85rem;font-weight:bold;white-space:nowrap}
+label{font-weight:bold;display:block;margin:10px 0 6px}
+input[type=text],select,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:10px;font-size:1rem;font-family:inherit}
+button{border:0;border-radius:10px;padding:11px 17px;background:#5b3f9e;color:white;font-weight:bold;cursor:pointer;margin:5px 4px 5px 0;transition:opacity .2s}
+button:hover{opacity:.9}
+button.secondary{background:#ece7f8;color:#4c3586}
+button.audio{background:#2f7d65}
+button.small{padding:7px 13px;font-size:.9rem}
+button.submit{background:#059669;font-size:1.1rem;padding:14px 30px}
+button.submit:hover{background:#047857}
+.story{background:#fbf9ff;border-left:5px solid #6a4caf;padding:20px;border-radius:12px;font-size:1.05rem}
+.story p{margin:0 0 10px}
+.question{border:1px solid #e7e3ee;border-radius:13px;padding:17px;margin:15px 0}
+.question.correct{border-color:#38a169;background:#f0fff7}
+.question.wrong{border-color:#d64545;background:#fff4f4}
+.points{float:right;color:#777;font-size:.85rem}
+#start{max-width:700px;margin:70px auto}
+#worksheet{display:none}
+#result{display:none}
+.score{font-size:3.5rem;font-weight:800;color:#5b3f9e;text-align:center;margin:10px 0}
+.score-label{text-align:center;font-size:1.1rem;color:#666;margin-bottom:20px}
+.report{background:#f8f5ff;border-radius:15px;padding:20px;margin-top:18px}
+.report-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e5e1ed}
+.report-row:last-child{border-bottom:none}
+.report-label{font-weight:bold;color:#5b3f9e}
+.print-only{display:none}
+footer{text-align:center;color:#777;padding:30px}
+.difficulty{font-size:.8rem;color:#888;font-weight:normal;margin-left:8px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+@media(max-width:700px){.grid-2{grid-template-columns:1fr}}
+.hint{background:#fff9e6;border-left:4px solid #e6b800;padding:10px 15px;border-radius:8px;font-size:.95rem;margin:10px 0}
+.progress-bar{background:#eee;border-radius:20px;height:8px;margin:10px 0 20px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#5b3f9e,#8064c6);width:0%;transition:width .4s}
+.arabic{direction:rtl;font-family:'Tahoma','Arial',sans-serif;background:#fff7ed;border-right:4px solid #d97706;padding:14px 18px;border-radius:10px;font-size:14.5px;line-height:1.8;margin:14px 0}
+.dialogue{background:#f8fafc;border-radius:12px;padding:22px;font-size:15px;line-height:2.1;border-left:4px solid #2563eb;margin:12px 0}
+.dialogue p{margin:0 0 6px}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:14px}
+.vocab-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:14px;text-align:center}
+.vocab-card b{color:#5b3f9e;font-size:15px;display:block}
+.vocab-card span{font-size:13px;color:#666;display:block;margin-top:4px}
+.vocab-card .ar{font-size:13px;color:#0d9488;direction:rtl;font-family:'Tahoma',sans-serif;display:block;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;background:#fff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb}
+th,td{padding:10px 14px;border-bottom:1px solid #e5e7eb;text-align:left}
+th{background:#f8fafc;font-weight:800;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:#6b7280}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#f8fafc}
+.tag{display:inline-block;background:#eff6ff;color:#2563eb;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:700;margin:2px}
+.fill-blank{display:inline-block;border-bottom:2px solid #5b3f9e;min-width:110px;padding:2px 6px;margin:0 4px;font-weight:bold;color:#5b3f9e}
+.match-row{display:flex;align-items:center;gap:12px;margin:10px 0;flex-wrap:wrap}
+.match-row .left{flex:1;min-width:180px;font-weight:600;background:#f8fafc;padding:10px 14px;border-radius:10px;border:1px solid #e5e7eb}
+.match-row select{flex:1;min-width:180px}
+.quote{font-style:italic;color:#4c3586;background:#f5f3fb;padding:12px 18px;border-radius:10px;border-left:4px solid #8064c6;margin:10px 0}
+.task-label{display:inline-block;background:#5b3f9e;color:#fff;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:4px 12px;border-radius:6px;margin-bottom:8px}
+.certificate{border:3px solid #5b3f9e;border-radius:20px;padding:40px;text-align:center;background:linear-gradient(135deg,#faf9ff,#f0edf9);margin-top:20px}
+.certificate h2{font-size:2rem;color:#3b2b6e;margin-bottom:6px}
+.certificate .cert-sub{color:#666;font-size:1rem;margin-bottom:24px}
+.certificate .cert-name{font-size:2rem;font-weight:800;color:#5b3f9e;border-bottom:3px solid #5b3f9e;display:inline-block;padding:0 20px 6px;margin:16px 0}
+.certificate .cert-score{font-size:4rem;font-weight:800;color:#059669;margin:16px 0}
+.certificate .cert-obs{background:#fff;border-radius:12px;padding:16px 24px;margin:20px auto;max-width:600px;font-size:1.05rem;color:#333;border:1px solid #e5e1ed}
+.certificate .cert-date{color:#888;font-size:.9rem;margin-top:20px}
+.breakdown{background:#fff;border-radius:12px;padding:20px;margin-top:20px;text-align:left;border:1px solid #e5e1ed}
+.breakdown h3{color:#5b3f9e;margin-bottom:12px;text-align:center}
+.breakdown .row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #eee;font-size:.95rem}
+.breakdown .row:last-child{border-bottom:none}
+.breakdown .row .ok{color:#059669;font-weight:bold}
+.breakdown .row .no{color:#d64545;font-weight:bold}
+@media print{
+body{background:white}.container{max-width:none;padding:0}.card{box-shadow:none;border:1px solid #ddd}
+button,#start,.no-print{display:none!important}.print-only{display:block}
+#worksheet{display:block!important}header{color:#111;background:white;border:2px solid #5b3f9e}
+.question{border-color:#ccc}
+.certificate{border-color:#5b3f9e}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- START SCREEN -->
+<section id="start" class="card">
+<header>
+<h1>Deutsch A1 – Wiederholungslektion</h1>
+<p>60 Minuten • Sein · Heißen · Kommen · Pronomen · Begrüßung · Uhrzeit · Berufe · Zahlen · Familie · Tagesablauf</p>
+</header>
+<label for="participantName">Vollständiger Name / Nom complet / الاسم الكامل</label>
+<input id="participantName" type="text" placeholder="z.B. Mohamed Benali / مثال: محمد بن علي">
+<p style="color:#d64545;font-weight:bold;font-size:.9rem;">⚠️ Bitte geben Sie Ihren vollständigen Namen ein (Vor- und Nachname).</p>
+<p><strong>Consigne :</strong> Entrez votre nom complet avant de commencer. Cette activité dure environ 60 minutes et couvre tous les points étudiés.</p>
+<div class="hint">💡 <strong>Conseil :</strong> Lisez attentivement chaque consigne. Les exercices sont progressifs : ⭐ facile → ⭐⭐⭐ difficile. À la fin, cliquez sur <b>« Terminer et obtenir le certificat »</b>.</div>
+<button onclick="startWorksheet()">Commencer l'activité</button>
+</section>
+
+<!-- WORKSHEET -->
+<main id="worksheet">
+<header>
+<h1>Deutsch A1 – Wiederholungslektion</h1>
+<p>Une nouvelle vie en Allemagne – Amine, Fares, Mohamed, Anissa und Ilyes</p>
+</header>
+
+<div class="progress-bar no-print"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- ===== PART 1: SITUATION ===== -->
+<div class="card">
+<div class="section-title"><h2>1. Situation</h2><span class="badge">Lesen • 5 min</span></div>
+<p><strong>Consigne :</strong> Lisez ce texte. Il raconte l'arrivée de cinq amis en Allemagne. Vous allez travailler sur ce texte dans les exercices suivants.</p>
+<div class="story" id="story">
+<p><strong>Amine, Fares, Mohamed, Anissa und Ilyes sind neu in Deutschland.</strong></p>
+<p>Sie kommen aus Algerien und leben jetzt in verschiedenen Städten in Deutschland.</p>
+<p>Amine lebt in Berlin. Fares lebt in Hamburg. Mohamed wohnt in Köln. Anissa lebt in München und Ilyes wohnt in Leipzig.</p>
+<p>Sie lernen sich in einem Deutschkurs kennen.</p>
+<p>Amine sagt: „Hallo! Ich heiße Amine. Ich bin 24 Jahre alt und komme aus Algerien. Ich wohne jetzt in Berlin."</p>
+<p>Fares sagt: „Ich heiße Fares. Ich bin neu in Hamburg. Ich lerne Deutsch und suche neue Freunde."</p>
+<p>Mohamed sagt: „Ich bin Mohamed. Ich wohne in Köln. Ich suche eine Wohnung und einen Deutschkurs."</p>
+<p>Anissa arbeitet am Nachmittag. Am Vormittag lernt sie Deutsch. Sie sagt: „Deutsch ist wichtig für mein neues Leben in Deutschland."</p>
+<p>Ilyes fährt jeden Morgen mit dem Bus zum Deutschkurs. Der Kurs beginnt um neun Uhr.</p>
+<p>Nach dem Kurs gehen die fünf Freunde zusammen zum Bahnhof. Neben dem Bahnhof gibt es einen Supermarkt. Sie kaufen Wasser und Brot.</p>
+<p>Die fünf Freunde sprechen Deutsch, lernen viel und helfen einander. Sie möchten sich in Deutschland zu Hause fühlen.</p>
+</div>
+<button class="audio" onclick="speakStory()">🔊 Écouter le texte</button>
+<button class="secondary" onclick="stopSpeech()">⏹ Arrêter</button>
+</div>
+
+<!-- ===== PART 2: HÖRVERSTEHEN – SITUATIONS ===== -->
+<div class="card">
+<div class="section-title"><h2>2. Hörverstehen <span class="difficulty">⭐ einfach</span></h2><span class="badge">6 points • 6 min</span></div>
+<p><strong>Consigne :</strong> Écoutez chaque petite scène. Puis complétez la phrase avec l'information manquante.</p>
+
+<div class="question" data-answer="Berlin" data-points="1.5">
+<span class="points">1.5 points</span>
+<p><span class="task-label">Situation 1</span></p>
+<p>Une amie vous parle d'Amine. Écoutez et complétez :</p>
+<button class="audio small" onclick="speak('Amine ist neu hier. Er wohnt jetzt in Berlin und sucht einen Deutschkurs.')">🔊 Écouter</button>
+<p style="margin-top:10px;font-size:1.05rem;">Amine wohnt in <input id="q1" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+
+<div class="question" data-answer="Hamburg" data-points="1.5">
+<span class="points">1.5 points</span>
+<p><span class="task-label">Situation 2</span></p>
+<p>Au téléphone, Fares raconte son arrivée. Écoutez et complétez :</p>
+<button class="audio small" onclick="speak('Hallo! Ich bin Fares. Ich bin neu in Hamburg und lerne gerade Deutsch.')">🔊 Écouter</button>
+<p style="margin-top:10px;font-size:1.05rem;">Fares ist neu in <input id="q2" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+
+<div class="question" data-answer="neun Uhr" data-points="1.5">
+<span class="points">1.5 points</span>
+<p><span class="task-label">Situation 3</span></p>
+<p>Vous demandez à un ami à quelle heure commence le cours. Écoutez et complétez :</p>
+<button class="audio small" onclick="speak('Der Deutschkurs beginnt um neun Uhr. Bitte sei pünktlich!')">🔊 Écouter</button>
+<p style="margin-top:10px;font-size:1.05rem;">Der Deutschkurs beginnt um <input id="q3" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+
+<div class="question" data-answer="mit dem Bus" data-points="1.5">
+<span class="points">1.5 points</span>
+<p><span class="task-label">Situation 4</span></p>
+<p>Ilyes explique comment il va au cours. Écoutez et complétez :</p>
+<button class="audio small" onclick="speak('Jeden Morgen fahre ich mit dem Bus zum Deutschkurs. Das dauert zwanzig Minuten.')">🔊 Écouter</button>
+<p style="margin-top:10px;font-size:1.05rem;">Ilyes fährt <input id="q4" type="text" class="fill-blank" placeholder="..."> zum Deutschkurs.</p>
+</div>
+</div>
+
+<!-- ===== PART 3: LESEVERSTEHEN – QUI PARLE? ===== -->
+<div class="card">
+<div class="section-title"><h2>3. Leseverstehen <span class="difficulty">⭐ einfach</span></h2><span class="badge">4 points • 4 min</span></div>
+<p><strong>Consigne :</strong> Relisez le texte de la partie 1. Qui dit ou fait chaque chose ? Écrivez le prénom.</p>
+
+<div class="question" data-answer="Anissa" data-points="1">
+<span class="points">1 point</span>
+<p><span class="task-label">Qui est-ce ?</span></p>
+<p style="font-size:1.05rem;">Cette personne travaille l'après-midi et apprend l'allemand le matin. Elle pense que l'allemand est important pour sa nouvelle vie.</p>
+<input id="q5" type="text" class="fill-blank" placeholder="Prénom...">
+</div>
+
+<div class="question" data-answer="Mohamed" data-points="1">
+<span class="points">1 point</span>
+<p><span class="task-label">Qui est-ce ?</span></p>
+<p style="font-size:1.05rem;">Cette personne cherche un appartement et un cours d'allemand.</p>
+<input id="q6" type="text" class="fill-blank" placeholder="Prénom...">
+</div>
+
+<div class="question" data-answer="Ilyes" data-points="1">
+<span class="points">1 point</span>
+<p><span class="task-label">Qui est-ce ?</span></p>
+<p style="font-size:1.05rem;">Cette personne prend le bus chaque matin pour aller au cours.</p>
+<input id="q7" type="text" class="fill-blank" placeholder="Prénom...">
+</div>
+
+<div class="question" data-answer="Amine, Fares, Mohamed, Anissa und Ilyes" data-points="1">
+<span class="points">1 point</span>
+<p><span class="task-label">Qui est-ce ?</span></p>
+<p style="font-size:1.05rem;">Après le cours, ces personnes vont ensemble à la gare et achètent de l'eau et du pain. (Écrivez tous les prénoms séparés par des virgules.)</p>
+<input id="q8" type="text" class="fill-blank" placeholder="Prénoms...">
+</div>
+</div>
+
+<!-- ===== PART 4: BEGRÜSSUNG – CHOISISSEZ LA BONNE SITUATION ===== -->
+<div class="card">
+<div class="section-title"><h2>4. Begrüßung & Verabschiedung <span class="difficulty">⭐ einfach</span></h2><span class="badge">4 points • 4 min</span></div>
+<p><strong>Consigne :</strong> Pour chaque situation, écrivez la salutation ou l'au revoir qui convient en allemand.</p>
+<div class="hint">💡 <b>Rappel :</b> Hallo · Guten Morgen · Guten Tag · Guten Abend · Tschüss · Auf Wiedersehen · Gute Nacht</div>
+
+<div class="question" data-answer="Guten Morgen" data-points="1">
+<p><span class="task-label">Situation 1</span></p>
+<p>Vous arrivez au bureau à 8h. Votre collègue vous voit. Vous dites :</p>
+<input id="q9" type="text" class="fill-blank" placeholder="...">
+</div>
+
+<div class="question" data-answer="Guten Abend" data-points="1">
+<p><span class="task-label">Situation 2</span></p>
+<p>Vous entrez dans un restaurant à 20h. Le serveur vous accueille. Vous dites :</p>
+<input id="q10" type="text" class="fill-blank" placeholder="...">
+</div>
+
+<div class="question" data-answer="Tschüss" data-points="1">
+<p><span class="task-label">Situation 3</span></p>
+<p>Vous quittez un ami à la fin de la journée. Vous dites :</p>
+<input id="q11" type="text" class="fill-blank" placeholder="...">
+</div>
+
+<div class="question" data-answer="Auf Wiedersehen" data-points="1">
+<p><span class="task-label">Situation 4</span></p>
+<p>Vous quittez votre professeur après le cours. Vous dites poliment :</p>
+<input id="q12" type="text" class="fill-blank" placeholder="...">
+</div>
+</div>
+
+<!-- ===== PART 5: PRONOMEN + VERBEN – COMPLÉTEZ LE DIALOGUE ===== -->
+<div class="card">
+<div class="section-title"><h2>5. Personalpronomen + sein / heißen / kommen <span class="difficulty">⭐⭐ mittel</span></h2><span class="badge">4 points • 5 min</span></div>
+<p><strong>Consigne :</strong> Complétez ce dialogue entre deux nouveaux étudiants. Utilisez le bon pronom ou la bonne forme du verbe.</p>
+
+<table>
+<tr><th>Pronomen</th><th>sein</th><th>heißen</th><th>kommen</th></tr>
+<tr><td>ich</td><td>bin</td><td>heiße</td><td>komme</td></tr>
+<tr><td>du</td><td>bist</td><td>heißt</td><td>kommst</td></tr>
+<tr><td>er / sie / es</td><td>ist</td><td>heißt</td><td>kommt</td></tr>
+<tr><td>wir</td><td>sind</td><td>heißen</td><td>kommen</td></tr>
+<tr><td>ihr</td><td>seid</td><td>heißt</td><td>kommt</td></tr>
+<tr><td>sie / Sie</td><td>sind</td><td>heißen</td><td>kommen</td></tr>
+</table>
+
+<div class="dialogue">
+<p><b>Lina:</b> Hallo! Ich (13) <input id="q13" type="text" class="fill-blank" placeholder="..."> Lina. Und du? Wie (14) <input id="q14" type="text" class="fill-blank" placeholder="..."> du?</p>
+<p><b>Karim:</b> Ich heiße Karim. Ich (15) <input id="q15" type="text" class="fill-blank" placeholder="..."> neu hier. Woher kommst du?</p>
+<p><b>Lina:</b> Ich komme aus Spanien. Und du? Woher (16) <input id="q16" type="text" class="fill-blank" placeholder="..."> du?</p>
+<p><b>Karim:</b> Ich komme aus Algerien. Meine Freunde und ich (17) <input id="q17" type="text" class="fill-blank" placeholder="..."> aus verschiedenen Ländern.</p>
+<p><b>Lina:</b> Das ist schön! Und wer ist das? <b>(zeigt auf Anissa)</b></p>
+<p><b>Karim:</b> Das ist Anissa. (18) <input id="q18" type="text" class="fill-blank" placeholder="..."> kommt aus München.</p>
+<p><b>Lina:</b> Und die zwei Männer dort? Woher (19) <input id="q19" type="text" class="fill-blank" placeholder="..."> sie?</p>
+<p><b>Karim:</b> Sie kommen aus Algerien. Sie sind auch neu hier.</p>
+<p><b>Lina:</b> Guten Tag, Herr Müller! Wie geht es (20) <input id="q20" type="text" class="fill-blank" placeholder="..."> ? <i>(formel)</i></p>
+</div>
+</div>
+
+<!-- ===== PART 6: ZAHLEN – ÉCOUTEZ ET ÉCRIVEZ ===== -->
+<div class="card">
+<div class="section-title"><h2>6. Zahlen 1–20 <span class="difficulty">⭐⭐ mittel</span></h2><span class="badge">2 points • 3 min</span></div>
+<p><strong>Consigne :</strong> Écoutez les numéros de téléphone et écrivez les chiffres en allemand (en toutes lettres).</p>
+<div class="vocab-grid">
+<div class="vocab-card"><b>1</b><span>eins</span><span class="ar">واحد</span></div>
+<div class="vocab-card"><b>2</b><span>zwei</span><span class="ar">اثنان</span></div>
+<div class="vocab-card"><b>3</b><span>drei</span><span class="ar">ثلاثة</span></div>
+<div class="vocab-card"><b>4</b><span>vier</span><span class="ar">أربعة</span></div>
+<div class="vocab-card"><b>5</b><span>fünf</span><span class="ar">خمسة</span></div>
+<div class="vocab-card"><b>6</b><span>sechs</span><span class="ar">ستة</span></div>
+<div class="vocab-card"><b>7</b><span>sieben</span><span class="ar">سبعة</span></div>
+<div class="vocab-card"><b>8</b><span>acht</span><span class="ar">ثمانية</span></div>
+<div class="vocab-card"><b>9</b><span>neun</span><span class="ar">تسعة</span></div>
+<div class="vocab-card"><b>10</b><span>zehn</span><span class="ar">عشرة</span></div>
+<div class="vocab-card"><b>11</b><span>elf</span><span class="ar">أحد عشر</span></div>
+<div class="vocab-card"><b>12</b><span>zwölf</span><span class="ar">اثنا عشر</span></div>
+<div class="vocab-card"><b>13</b><span>dreizehn</span><span class="ar">ثلاثة عشر</span></div>
+<div class="vocab-card"><b>14</b><span>vierzehn</span><span class="ar">أربعة عشر</span></div>
+<div class="vocab-card"><b>15</b><span>fünfzehn</span><span class="ar">خمسة عشر</span></div>
+<div class="vocab-card"><b>16</b><span>sechzehn</span><span class="ar">ستة عشر</span></div>
+<div class="vocab-card"><b>17</b><span>siebzehn</span><span class="ar">سبعة عشر</span></div>
+<div class="vocab-card"><b>18</b><span>achtzehn</span><span class="ar">ثمانية عشر</span></div>
+<div class="vocab-card"><b>19</b><span>neunzehn</span><span class="ar">تسعة عشر</span></div>
+<div class="vocab-card"><b>20</b><span>zwanzig</span><span class="ar">عشرون</span></div>
+</div>
+
+<div class="question" data-answer="fünfzehn" data-points="0.5">
+<p><span class="task-label">Numéro 1</span></p>
+<button class="audio small" onclick="speak('Meine Nummer ist null, eins, fünf, null. Also: fünfzehn.')">🔊 Écouter</button>
+<p style="margin-top:10px;">Le numéro de téléphone contient le nombre <b>15</b>. Écrivez-le en allemand :</p>
+<input id="q21" type="text" class="fill-blank" placeholder="...">
+</div>
+
+<div class="question" data-answer="zwölf" data-points="0.5">
+<p><span class="task-label">Numéro 2</span></p>
+<button class="audio small" onclick="speak('Meine Nummer ist null, eins, zwei, null. Also: zwölf.')">🔊 Écouter</button>
+<p style="margin-top:10px;">Le numéro contient le nombre <b>12</b>. Écrivez-le en allemand :</p>
+<input id="q22" type="text" class="fill-blank" placeholder="...">
+</div>
+
+<div class="question" data-answer="siebzehn" data-points="0.5">
+<p><span class="task-label">Numéro 3</span></p>
+<button class="audio small" onclick="speak('Meine Nummer ist null, eins, sieben, null. Also: siebzehn.')">🔊 Écouter</button>
+<p style="margin-top:10px;">Le numéro contient le nombre <b>17</b>. Écrivez-le en allemand :</p>
+<input id="q23" type="text" class="fill-blank" placeholder="...">
+</div>
+
+<div class="question" data-answer="zwanzig" data-points="0.5">
+<p><span class="task-label">Numéro 4</span></p>
+<button class="audio small" onclick="speak('Meine Nummer ist null, zwei, null, null. Also: zwanzig.')">🔊 Écouter</button>
+<p style="margin-top:10px;">Le numéro contient le nombre <b>20</b>. Écrivez-le en allemand :</p>
+<input id="q24" type="text" class="fill-blank" placeholder="...">
+</div>
+</div>
+
+<!-- ===== PART 7: UHRZEIT – LISEZ LE PROGRAMME ===== -->
+<div class="card">
+<div class="section-title"><h2>7. Uhrzeit <span class="difficulty">⭐⭐ mittel</span></h2><span class="badge">4 points • 5 min</span></div>
+<p><strong>Consigne :</strong> Voici le programme de la journée de Lina. Lisez chaque horaire et écrivez-le en allemand (forme officielle : heure + Uhr + minutes).</p>
+<div class="hint">💡 <b>Exemple :</b> 8:00 → <b>Es ist acht Uhr.</b> · 14:30 → <b>Es ist vierzehn Uhr dreißig.</b></div>
+
+<div class="vocab-grid">
+<div class="vocab-card"><b>8:00</b><span>Der Kurs beginnt.</span></div>
+<div class="vocab-card"><b>12:15</b><span>Mittagspause</span></div>
+<div class="vocab-card"><b>15:45</b><span>Sport</span></div>
+<div class="vocab-card"><b>20:30</b><span>Abendessen</span></div>
+</div>
+
+<div class="question" data-answer="Es ist acht Uhr." data-points="1">
+<p><span class="task-label">8:00</span></p>
+<p>Der Deutschkurs beginnt um 8:00. Comment dit-on ?</p>
+<input id="q25" type="text" class="fill-blank" placeholder="Es ist ...">
+</div>
+
+<div class="question" data-answer="Es ist zwölf Uhr fünfzehn." data-points="1">
+<p><span class="task-label">12:15</span></p>
+<p>Lina hat um 12:15 Mittagspause. Comment dit-on ?</p>
+<input id="q26" type="text" class="fill-blank" placeholder="Es ist ...">
+</div>
+
+<div class="question" data-answer="Es ist fünfzehn Uhr fünfundvierzig." data-points="1">
+<p><span class="task-label">15:45</span></p>
+<p>Lina macht um 15:45 Sport. Comment dit-on ?</p>
+<input id="q27" type="text" class="fill-blank" placeholder="Es ist ...">
+</div>
+
+<div class="question" data-answer="Es ist zwanzig Uhr dreißig." data-points="1">
+<p><span class="task-label">20:30</span></p>
+<p>Lina isst um 20:30 zu Abend. Comment dit-on ?</p>
+<input id="q28" type="text" class="fill-blank" placeholder="Es ist ...">
+</div>
+</div>
+
+<!-- ===== PART 8: BERUFE – QUI FAIT QUOI? ===== -->
+<div class="card">
+<div class="section-title"><h2>8. Berufe <span class="difficulty">⭐⭐ mittel</span></h2><span class="badge">2 points • 3 min</span></div>
+<p><strong>Consigne :</strong> Reliez chaque personne à son métier. Écrivez le métier correct en allemand.</p>
+
+<div class="vocab-grid">
+<div class="vocab-card"><b>der Lehrer</b><span class="ar">المعلم</span></div>
+<div class="vocab-card"><b>die Lehrerin</b><span class="ar">المعلمة</span></div>
+<div class="vocab-card"><b>der Arzt</b><span class="ar">الطبيب</span></div>
+<div class="vocab-card"><b>die Ärztin</b><span class="ar">الطبيبة</span></div>
+<div class="vocab-card"><b>der Student</b><span class="ar">الطالب</span></div>
+<div class="vocab-card"><b>der Koch</b><span class="ar">الطباخ</span></div>
+</div>
+
+<div class="question" data-answer="Arzt" data-points="0.5">
+<p><span class="task-label">Person 1</span></p>
+<p>Herr Bouzid arbeitet im Krankenhaus. Er hilft kranken Menschen. Er ist <input id="q29" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+
+<div class="question" data-answer="Lehrerin" data-points="0.5">
+<p><span class="task-label">Person 2</span></p>
+<p>Frau Merkel arbeitet in einer Schule. Sie unterrichtet Kinder. Sie ist <input id="q30" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+
+<div class="question" data-answer="Student" data-points="0.5">
+<p><span class="task-label">Person 3</span></p>
+<p>Karim lernt an der Universität. Er hat viele Prüfungen. Er ist <input id="q31" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+
+<div class="question" data-answer="Koch" data-points="0.5">
+<p><span class="task-label">Person 4</span></p>
+<p>Herr Schmidt arbeitet in einem Restaurant. Er macht leckeres Essen. Er ist <input id="q32" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+</div>
+
+<!-- ===== PART 9: FAMILIE – LISEZ L'ARBRE GÉNÉALOGIQUE ===== -->
+<div class="card">
+<div class="section-title"><h2>9. Familie <span class="difficulty">⭐⭐ mittel</span></h2><span class="badge">2 points • 3 min</span></div>
+<p><strong>Consigne :</strong> Lisez la description de la famille de Lina, puis complétez chaque phrase avec le mot correct.</p>
+<div class="hint">💡 <b>Vocabulaire :</b> der Vater · die Mutter · der Bruder · die Schwester · der Großvater · die Großmutter · das Kind · die Eltern</div>
+
+<div class="quote">
+Hallo! Ich bin Lina. Meine Familie ist groß. Mein Vater heißt Ahmed. Meine Mutter heißt Fatima. Ich habe einen Bruder. Er heißt Karim. Meine Großmutter heißt Aïcha. Mein Großvater heißt Ali.
+</div>
+
+<div class="question" data-answer="Vater" data-points="0.5">
+<p><span class="task-label">Qui est-ce ?</span></p>
+<p>Ahmed ist der Mann von Fatima. Er ist Linas <input id="q33" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+
+<div class="question" data-answer="Bruder" data-points="0.5">
+<p><span class="task-label">Qui est-ce ?</span></p>
+<p>Karim ist der Sohn von Ahmed und Fatima. Er ist Linas <input id="q34" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+
+<div class="question" data-answer="Großvater" data-points="0.5">
+<p><span class="task-label">Qui est-ce ?</span></p>
+<p>Ali ist der Vater von Ahmed. Er ist Linas <input id="q35" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+
+<div class="question" data-answer="Eltern" data-points="0.5">
+<p><span class="task-label">Qui est-ce ?</span></p>
+<p>Ahmed und Fatima zusammen sind Linas <input id="q36" type="text" class="fill-blank" placeholder="..."> .</p>
+</div>
+</div>
+
+<!-- ===== PART 10: TAGESABLAUF – REMETTEZ EN ORDRE ===== -->
+<div class="card">
+<div class="section-title"><h2>10. Tagesablauf <span class="difficulty">⭐⭐⭐ schwer</span></h2><span class="badge">4 points • 5 min</span></div>
+<p><strong>Consigne :</strong> Voici les activités de la journée de Karim, mais elles sont mélangées. Remettez-les dans l'ordre et écrivez une phrase complète pour chacune.</p>
+
+<div class="vocab-grid">
+<div class="vocab-card"><b>aufstehen</b><span class="ar">يستيقظ</span></div>
+<div class="vocab-card"><b>frühstücken</b><span class="ar">يتناول الفطور</span></div>
+<div class="vocab-card"><b>arbeiten</b><span class="ar">يعمل</span></div>
+<div class="vocab-card"><b>schlafen</b><span class="ar">ينام</span></div>
+</div>
+
+<div class="question" data-answer="Ich stehe um 7 Uhr auf." data-points="1">
+<p><span class="task-label">Étape 1</span></p>
+<p>um 7 Uhr / auf / Ich / stehe</p>
+<input id="q37" type="text" class="fill-blank" placeholder="Écrivez la phrase complète...">
+</div>
+
+<div class="question" data-answer="Ich frühstücke um 8 Uhr." data-points="1">
+<p><span class="task-label">Étape 2</span></p>
+<p>frühstücke / um 8 Uhr / Ich</p>
+<input id="q38" type="text" class="fill-blank" placeholder="Écrivez la phrase complète...">
+</div>
+
+<div class="question" data-answer="Ich arbeite um 9 Uhr." data-points="1">
+<p><span class="task-label">Étape 3</span></p>
+<p>um 9 Uhr / Ich / arbeite</p>
+<input id="q39" type="text" class="fill-blank" placeholder="Écrivez la phrase complète...">
+</div>
+
+<div class="question" data-answer="Ich schlafe um 22 Uhr." data-points="1">
+<p><span class="task-label">Étape 4</span></p>
+<p>um 22 Uhr / Ich / schlafe</p>
+<input id="q40" type="text" class="fill-blank" placeholder="Écrivez la phrase complète...">
+</div>
+</div>
+
+<!-- ===== PART 11: SICH VORSTELLEN ===== -->
+<div class="card">
+<div class="section-title"><h2>11. Sich vorstellen <span class="difficulty">⭐⭐⭐ schwer</span></h2><span class="badge">4 points • 6 min</span></div>
+<p><strong>Consigne :</strong> À votre tour ! Présentez-vous en 4–5 phrases. Parlez de votre nom, votre âge, votre pays, votre ville et votre métier (ou vos études).</p>
+<div class="hint">💡 <b>Modèle :</b> Hallo! Ich heiße Amine. Ich bin 24 Jahre alt. Ich komme aus Algerien. Ich wohne in Berlin. Ich bin Student.</div>
+<textarea id="q41" placeholder="Schreiben Sie hier Ihre Vorstellung..." rows="6"></textarea>
+<p class="points" style="float:none;margin-top:6px;">4 points (évalué manuellement — au moins 4 phrases correctes et complètes)</p>
+</div>
+
+<!-- ===== SUBMIT ===== -->
+<div class="card no-print" style="text-align:center;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:2px solid #059669;">
+<h2 style="color:#059669;margin-bottom:8px;">🎓 Prêt à terminer ?</h2>
+<p style="margin-bottom:14px;">Vérifiez vos réponses puis cliquez sur le bouton ci-dessous pour obtenir votre note et votre certificat.</p>
+<button class="submit" onclick="submitWorksheet()">✓ Terminer et obtenir le certificat</button>
+<button class="secondary" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Retour en haut</button>
+</div>
+
+<!-- ===== RESULT + CERTIFICATE ===== -->
+<div id="result" class="card">
+<h2 style="text-align:center;color:#3b2b6e;">🎓 Votre résultat</h2>
+<div class="score" id="score"></div>
+<div class="score-label" id="scoreLabel"></div>
+<div id="feedback"></div>
+
+<div class="report">
+<h3 style="color:#5b3f9e;margin-bottom:10px;">📋 Détails de l'évaluation</h3>
+<div class="report-row"><span class="report-label">Participant</span><span id="reportName"></span></div>
+<div class="report-row"><span class="report-label">Note finale</span><span id="reportScore"></span></div>
+<div class="report-row"><span class="report-label">Observation</span><span id="reportObservation"></span></div>
+<div class="report-row"><span class="report-label">Date</span><span id="reportDate"></span></div>
+</div>
+
+<div class="certificate" id="certificate">
+<h2>🏅 Certificat de participation</h2>
+<p class="cert-sub">Deutsch A1 – Wiederholungslektion (60 min)</p>
+<p>Ce document certifie que</p>
+<div class="cert-name" id="certName">—</div>
+<p>a complété avec succès la leçon interactive de révision Deutsch A1.</p>
+<div class="cert-score" id="certScore">— / 20</div>
+<div class="cert-obs" id="certObs">—</div>
+
+<div class="breakdown" id="breakdown">
+<h3>📊 Résultats par section</h3>
+<div id="breakdownRows"></div>
+</div>
+
+<p class="cert-date" id="certDate">—</p>
+</div>
+
+<div class="no-print" style="text-align:center;margin-top:20px;">
+<button onclick="window.print()">🖨 Imprimer le certificat</button>
+<button class="secondary" onclick="location.reload()">🔄 Recommencer</button>
+</div>
+</div>
+
+<div class="print-only">
+<h2>Certificat de participation – Deutsch A1</h2>
+<p>Ce document confirme que <strong id="printName"></strong> a réalisé la leçon interactive de révision Deutsch A1 (60 min).</p>
+<p><strong>Résultat :</strong> <span id="printScore"></span> / 20</p>
+<p><strong>Observation :</strong> <span id="printObservation"></span></p>
+</div>
+
+<footer>Deutsch A1 • Interactive Worksheet • 60 Minuten</footer>
+</main>
+</div>
+
+<script>
+const normalize = s => String(s || "").trim().toLowerCase()
+  .replace(/[.!?]+$/g,"").replace(/\s+/g," ")
+  .replace(/ä/g,"a").replace(/ö/g,"o").replace(/ü/g,"u").replace(/ß/g,"ss");
+
+function startWorksheet(){
+  const rawName = document.getElementById("participantName").value.trim();
+  const parts = rawName.split(/\s+/).filter(p => p.length >= 2);
+  if(rawName.length < 4 || parts.length < 2){
+    alert("⚠️ Veuillez entrer votre nom COMPLET (prénom ET nom).\n\nيرجى إدخال الاسم الكامل (الاسم واللقب).\n\nPlease enter your FULL name (first AND last name).");
+    return;
+  }
+  document.getElementById("start").style.display="none";
+  document.getElementById("worksheet").style.display="block";
+  window.scrollTo({top:0,behavior:"smooth"});
+  updateProgress();
+}
+
+function getGermanVoice(){
+  const voices = window.speechSynthesis ? speechSynthesis.getVoices() : [];
+  return voices.find(v => /^de(-|_)/i.test(v.lang)) || null;
+}
+
+function speak(text){
+  if(!("speechSynthesis" in window)){
+    alert("La lecture audio n'est pas disponible dans ce navigateur.");
+    return;
+  }
+  speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "de-DE";
+  utterance.rate = 0.85;
+  utterance.pitch = 1;
+  const voice = getGermanVoice();
+  if(voice) utterance.voice = voice;
+  speechSynthesis.speak(utterance);
+}
+
+function speakStory(){
+  const text = document.getElementById("story").innerText;
+  speak(text);
+}
+
+function stopSpeech(){
+  if("speechSynthesis" in window) speechSynthesis.cancel();
+}
+
+function markQuestion(card, correct){
+  card.classList.remove("correct","wrong");
+  card.classList.add(correct ? "correct" : "wrong");
+}
+
+function updateProgress(){
+  const total = document.querySelectorAll('.question').length + 1;
+  const answered = document.querySelectorAll('.question input[type=text]:not(:placeholder-shown), .question textarea:not(:placeholder-shown)').length;
+  const pct = Math.min(100, Math.round((answered / total) * 100));
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+document.addEventListener('input', updateProgress);
+
+function submitWorksheet(){
+  let total = 0;
+  let breakdown = {
+    "Hörverstehen": {earned:0, max:6},
+    "Leseverstehen": {earned:0, max:4},
+    "Begrüßung": {earned:0, max:4},
+    "Pronomen + Verben": {earned:0, max:4},
+    "Zahlen": {earned:0, max:2},
+    "Uhrzeit": {earned:0, max:4},
+    "Berufe": {earned:0, max:2},
+    "Familie": {earned:0, max:2},
+    "Tagesablauf": {earned:0, max:4},
+    "Vorstellung": {earned:0, max:4}
+  };
+
+  const cards = [...document.querySelectorAll(".question")];
+  cards.forEach(c => c.classList.remove("correct","wrong"));
+
+  // Text-input answers with alternates
+  const textAnswers = {
+    q1:["berlin","Hörverstehen"],
+    q2:["hamburg","Hörverstehen"],
+    q3:["neun uhr","Hörverstehen"],
+    q4:["mit dem bus","Hörverstehen"],
+    q5:["anissa","Leseverstehen"],
+    q6:["mohamed","Leseverstehen"],
+    q7:["ilyes","Leseverstehen"],
+    q8:["amine, fares, mohamed, anissa und ilyes","Leseverstehen"],
+    q9:["guten morgen","Begrüßung"],
+    q10:["guten abend","Begrüßung"],
+    q11:["tschüss","Begrüßung"],
+    q12:["auf wiedersehen","Begrüßung"],
+    q13:["heiße","Pronomen + Verben"],
+    q14:["heißt","Pronomen + Verben"],
+    q15:["bin","Pronomen + Verben"],
+    q16:["kommst","Pronomen + Verben"],
+    q17:["sind","Pronomen + Verben"],
+    q18:["sie","Pronomen + Verben"],
+    q19:["kommen","Pronomen + Verben"],
+    q20:["ihnen","Pronomen + Verben"],
+    q21:["fünfzehn","Zahlen"],
+    q22:["zwölf","Zahlen"],
+    q23:["siebzehn","Zahlen"],
+    q24:["zwanzig","Zahlen"],
+    q25:["es ist acht uhr","Uhrzeit"],
+    q26:["es ist zwölf uhr fünfzehn","Uhrzeit"],
+    q27:["es ist fünfzehn uhr fünfundvierzig","Uhrzeit"],
+    q28:["es ist zwanzig uhr dreißig","Uhrzeit"],
+    q29:["arzt","Berufe"],
+    q30:["lehrerin","Berufe"],
+    q31:["student","Berufe"],
+    q32:["koch","Berufe"],
+    q33:["vater","Familie"],
+    q34:["bruder","Familie"],
+    q35:["großvater","Familie"],
+    q36:["eltern","Familie"],
+    q37:["ich stehe um 7 uhr auf","Tagesablauf"],
+    q38:["ich frühstücke um 8 uhr","Tagesablauf"],
+    q39:["ich arbeite um 9 uhr","Tagesablauf"],
+    q40:["ich schlafe um 22 uhr","Tagesablauf"]
+  };
+
+  Object.entries(textAnswers).forEach(([id,[answer,section]])=>{
+    const el = document.getElementById(id);
+    if(!el) return;
+    const card = el.closest(".question");
+    const ok = normalize(el.value) === normalize(answer);
+    if(ok){ total += Number(card.dataset.points); breakdown[section].earned += Number(card.dataset.points); }
+    markQuestion(card,ok);
+  });
+
+  // Writing (manual evaluation: 4–5 sentences)
+  const writing = document.getElementById('q41').value.trim();
+  const writingCard = document.getElementById('q41').closest('.card');
+  const sentenceCount = writing.split(/[.!?]+/).filter(s => s.trim().length > 3).length;
+  let writingScore = 0;
+  if(writing.length > 40 && sentenceCount >= 4) {
+    writingScore = 4;
+    writingCard.style.borderColor = '#38a169';
+  } else if(writing.length > 25 && sentenceCount >= 2) {
+    writingScore = 2;
+    writingCard.style.borderColor = '#d97706';
+  } else {
+    writingCard.style.borderColor = '#d64545';
+  }
+  total += writingScore;
+  breakdown["Vorstellung"].earned += writingScore;
+
+  total = Math.round(total * 2) / 2;
+  const grade20 = Math.round(total * 10) / 10;
+
+  let observation = "";
+  let scoreLabel = "";
+  if(grade20 >= 18){ observation = "Sehr gut! Ausgezeichnete Leistung. Alle A1-Grundlagen sind sicher beherrscht."; scoreLabel = "🏆 Sehr gut"; }
+  else if(grade20 >= 15){ observation = "Gut gemacht! Die meisten A1-Themen sind gut verstanden. Weiter so!"; scoreLabel = "🌟 Gut"; }
+  else if(grade20 >= 12){ observation = "Befriedigend. Einige Themen müssen noch wiederholt werden (Verben, Pronomen, Uhrzeit)."; scoreLabel = "👍 Befriedigend"; }
+  else if(grade20 >= 10){ observation = "Ausreichend. Wiederholen Sie die Grundlagen: sein, heißen, kommen, Pronomen und Uhrzeit."; scoreLabel = "📖 Ausreichend"; }
+  else { observation = "Nicht bestanden. Bitte wiederholen Sie die Lektion komplett und üben Sie täglich 15 Minuten."; scoreLabel = "❌ Nicht bestanden"; }
+
+  const name = document.getElementById("participantName").value.trim();
+  const now = new Date().toLocaleDateString("fr-FR", {year:'numeric',month:'long',day:'numeric'});
+
+  document.getElementById("result").style.display="block";
+  document.getElementById("score").textContent = grade20 + " / 20";
+  document.getElementById("scoreLabel").textContent = scoreLabel;
+  document.getElementById("feedback").innerHTML = "<p style='text-align:center;font-size:1.05rem;'><strong>Évaluation :</strong> " + observation + "</p>";
+  document.getElementById("reportName").textContent = name;
+  document.getElementById("reportScore").textContent = grade20 + " / 20";
+  document.getElementById("reportObservation").textContent = observation;
+  document.getElementById("reportDate").textContent = now;
+
+  document.getElementById("certName").textContent = name;
+  document.getElementById("certScore").textContent = grade20 + " / 20";
+  document.getElementById("certObs").textContent = observation;
+  document.getElementById("certDate").textContent = "Délivré le " + now;
+
+  const rows = Object.entries(breakdown).map(([section,data]) => {
+    const pct = data.max > 0 ? (data.earned / data.max * 100) : 0;
+    const status = pct >= 80 ? 'ok' : pct >= 50 ? '' : 'no';
+    const symbol = pct >= 80 ? '✅' : pct >= 50 ? '⚠️' : '❌';
+    return `<div class="row"><span>${section}</span><span class="${status}">${symbol} ${data.earned} / ${data.max}</span></div>`;
+  }).join('');
+  document.getElementById("breakdownRows").innerHTML = rows;
+
+  document.getElementById("printName").textContent = name;
+  document.getElementById("printScore").textContent = grade20 + " / 20";
+  document.getElementById("printObservation").textContent = observation;
+
+  document.getElementById("result").scrollIntoView({behavior:"smooth"});
+}
+
+if("speechSynthesis" in window && "onvoiceschanged" in speechSynthesis){
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+</body>
+</html>
